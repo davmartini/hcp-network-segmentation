@@ -1,5 +1,5 @@
 1. Localnet network
----
+```
 apiVersion: nmstate.io/v1
 kind: NodeNetworkConfigurationPolicy
 metadata:
@@ -14,4 +14,4 @@ spec:
   nodeSelector:
     external-network: 'true'
     node-role.kubernetes.io/worker: ''
----
+```
