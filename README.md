@@ -26,3 +26,17 @@ metadata:
 spec:
   config: '{ "name":"localnet1", "type":"ovn-k8s-cni-overlay", "cniVersion":"0.4.0", "topology":"localnet", "netAttachDefName":"default/coe-ovs-2003", "vlanID":2003 }'
 ```
+
+3. MetalLB VLAN2003 pool
+```
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: ip-addresspool-vlan2003
+  namespace: metallb-system
+spec:
+  addresses:
+    - 192.168.203.40-192.168.203.49
+  autoAssign: true
+  avoidBuggyIPs: false
+```
