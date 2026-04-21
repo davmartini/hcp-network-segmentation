@@ -1,0 +1,17 @@
+1. Localnet network
+---
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: mapping
+spec:
+  desiredState:
+    ovn:
+      bridge-mappings:
+        - bridge: br-ex
+          localnet: localnet1
+          state: present
+  nodeSelector:
+    external-network: 'true'
+    node-role.kubernetes.io/worker: ''
+---
